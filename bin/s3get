@@ -1,0 +1,13 @@
+
+var program = require('commander')
+    s3get = require('../lib/aws-parallel-get');
+
+program
+  .version('0.0.1')
+  .option('-b, --bucket', 'Bucket')
+  .parse(process.argv);
+
+
+s3get.go({
+    bucket: 'aws-frontend-logs'
+})
