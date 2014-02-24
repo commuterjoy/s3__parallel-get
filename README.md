@@ -12,9 +12,9 @@ Progress is printed to stderr,
 
 ```
 found 4 objects in 'logs/production/access.log/2014/02/22'
-retrieved object #2 - PROD/access.log/2014/02/22/access.i-13e5f250b
-retrieved object #4 - PROD/access.log/2014/02/22/access.i-13e5f250d
-retrieved object #3 - PROD/access.log/2014/02/22/access.i-13e5f250c
-retrieved object #1 - PROD/access.log/2014/02/22/access.i-13e5f250a
+retrieved object #2 - PROD/access.log/2014/02/22/access.i-13e5f250-b
+retrieved object #4 - PROD/access.log/2014/02/22/access.i-13e5f250-d
+retrieved object #3 - PROD/access.log/2014/02/22/access.i-13e5f250-c
+retrieved object #1 - PROD/access.log/2014/02/22/access.i-13e5f250-a
 done
 ```
