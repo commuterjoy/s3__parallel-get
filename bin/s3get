@@ -1,4 +1,3 @@
-
 var program = require('commander')
     s3get = require('../lib/aws-parallel-get');
 
@@ -6,13 +5,13 @@ program
   .version('0.0.1')
   .option('-b, --bucket [name]', 'Bucket')
   .option('-p, --prefix [path]', 'Prefix')
+  .option('--key [str]', 'AWS access key', process.env.AWS_KEY)
+  .option('--secret [str]', 'AWS secret access key', process.env.AWS_SECRET)
   .parse(process.argv);
-
-// aws-frontend-logs/PROD/access.log/2014/02/22/frontend-router
-// var date = moment(new Date()).subtract(moment.duration(2, 'd')).format('YYYY/MM/DD');
-// util.format('PROD/access.log/%s/frontend-router', date)
 
 s3get.go({
     bucket: program.bucket,
-    prefix: program.prefix
+    prefix: program.prefix,
+    key: program.key,
+    secret: program.secret
 })
