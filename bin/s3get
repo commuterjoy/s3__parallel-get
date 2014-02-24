@@ -4,10 +4,15 @@ var program = require('commander')
 
 program
   .version('0.0.1')
-  .option('-b, --bucket', 'Bucket')
+  .option('-b, --bucket [name]', 'Bucket')
+  .option('-p, --prefix [path]', 'Prefix')
   .parse(process.argv);
 
+// aws-frontend-logs/PROD/access.log/2014/02/22/frontend-router
+// var date = moment(new Date()).subtract(moment.duration(2, 'd')).format('YYYY/MM/DD');
+// util.format('PROD/access.log/%s/frontend-router', date)
 
 s3get.go({
-    bucket: 'aws-frontend-logs'
+    bucket: program.bucket,
+    prefix: program.prefix
 })
