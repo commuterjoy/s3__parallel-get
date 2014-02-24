@@ -1,12 +1,14 @@
 {
   "name": "s3-parallel-get",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Matt Chadburn <matt@commuterjoy.co.uk>",
   "description": "Get files from s3, in parallel",
   "repository": {
     "type": "git",
     "url": "https://github.com/commuterjoy/s3-parallel-get.git"
   },
+  "main": "lib/aws-parallel-get.js",
+  "preferGlobal": "true",
   "keywords": [
     "aws",
     "s3"
@@ -15,14 +17,10 @@
     "s3get": "./bin/s3get" 
   },
   "dependencies" : {
-    "aws-sdk"   : "*",
-    "moment"    : "*",
-    "async"     : "*",
-    "commander" : "*"
-
-  },
-  "devDependencies": {
-    "mocha"   :  "*"
+    "aws-sdk"   : "2.*",
+    "moment"    : "2.5.*",
+    "async"     : "0.2.*",
+    "commander" : "2.1.*"
   },
   "license": "MIT",
   "engines": {

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var program = require('commander')
     s3get = require('../lib/aws-parallel-get');
 
