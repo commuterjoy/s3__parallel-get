@@ -19,9 +19,7 @@ var s3 = new s3get({
 });
 
 s3.on('data', function (data) {
-    if (/AppleWebKit/.test(data)) {
-        process.stdout.write("*" + data)
-    }
+    process.stdout.write("*" + data)
 })
 
 s3.go();
