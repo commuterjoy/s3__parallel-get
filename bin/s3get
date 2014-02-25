@@ -4,7 +4,7 @@ var program = require('commander')
     s3get = require('../lib/aws-parallel-get').s3get;
 
 program
-  .version('0.2.0')
+  .version('0.2.1')
   .option('-b, --bucket [name]', 'Bucket')
   .option('-p, --prefix [path]', 'Prefix')
   .option('--key [str]', 'AWS access key', process.env.AWS_KEY)
@@ -19,7 +19,7 @@ var s3 = new s3get({
 });
 
 s3.on('data', function (data) {
-    process.stdout.write("*" + data)
+    process.stdout.write(data)
 })
 
 s3.go();
