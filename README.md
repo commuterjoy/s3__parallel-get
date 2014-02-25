@@ -1,5 +1,7 @@
 [s3cmd](http://s3tools.org/s3cmd) is great, but too slow for downloading lots of files from s3. Instead, **s3__parallel-get** lets you download many files concurrently, meaning you get your files quicker.
 
+Downloading 150MB of log files split over 150 files, **s3cmd** took around 100 seconds, whereas **s3-parallel-get** took just under 25 seconds.
+
 ## Installation
 
 Just a standard npm install,
@@ -28,10 +30,6 @@ retrieved object #3 - PROD/access.log/2014/02/22/access.i-13e5f250-c
 retrieved object #1 - PROD/access.log/2014/02/22/access.i-13e5f250-a
 done
 ```
-
-## Benchmark 
-
-Downloading 150MB of log files split over 150 files, **s3cmd** took around 100 seconds, whereas **s3-parallel-get** took just under 25 seconds.
 
 ## Programmatic
 
