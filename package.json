@@ -1,6 +1,6 @@
 {
   "name": "s3-parallel-get",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "author": "Matt Chadburn <matt@commuterjoy.co.uk>",
   "description": "Get files from s3, in parallel",
   "repository": {
