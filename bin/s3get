@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require('commander')
-    s3get = require('../lib/aws-parallel-get');
+    s3get = require('../lib/aws-parallel-get').s3get;
 
 program
   .version('0.0.1')
@@ -11,9 +11,17 @@ program
   .option('--secret [str]', 'AWS secret access key', process.env.AWS_SECRET)
   .parse(process.argv);
 
-s3get.go({
+var s3 = new s3get({
     bucket: program.bucket,
     prefix: program.prefix,
     key: program.key,
     secret: program.secret
+});
+
+s3.on('data', function (data) {
+    if (/AppleWebKit/.test(data)) {
+        process.stdout.write("*" + data)
+    }
 })
+
+s3.go();
