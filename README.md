@@ -15,7 +15,8 @@ npm install -g s3-parallel-get
 ```
 export AWS_KEY=<key>
 export AWS_SECRET=<secret>
-node bin/s3get --bucket <bucket> --prefix <path/to/files>
+
+s3get --bucket <bucket> --prefix <path/to/files>
 ```
 
 **s3__parallel-get** was built for fetching log files, so output is sent to `stdout` for piping in to other commands.
