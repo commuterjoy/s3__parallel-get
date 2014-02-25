@@ -4,7 +4,7 @@ var program = require('commander')
     s3get = require('../lib/aws-parallel-get').s3get;
 
 program
-  .version('0.0.1')
+  .version('0.2.0')
   .option('-b, --bucket [name]', 'Bucket')
   .option('-p, --prefix [path]', 'Prefix')
   .option('--key [str]', 'AWS access key', process.env.AWS_KEY)
