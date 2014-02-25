@@ -32,3 +32,27 @@ done
 ## Benchmark 
 
 Downloading 150MB of log files split over 150 files, **s3cmd** took around 100 seconds, whereas **s3-parallel-get** took just under 25 seconds.
+
+## Programmatic
+
+```
+var s3get = require('../lib/aws-parallel-get').s3get
+
+// Set some options
+var opts = {
+    bucket: program.bucket,
+    prefix: program.prefix,
+    key: program.key,
+    secret: program.secret
+});
+
+var s3 = new s3get(opts)
+
+// write a handler for the s3 stream
+s3.on('data', function (data) {
+    process.stdout.write("*" + data)
+})  
+
+// kick it off
+s3.go();
+```
